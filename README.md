@@ -1,4 +1,4 @@
 # algorithm-practice
 About
 -----
-Codeforce problem solutions
+Codeforce + baekjoon problem solutions
