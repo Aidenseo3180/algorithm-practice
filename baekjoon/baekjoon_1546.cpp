@@ -1,4 +1,4 @@
-//https://www.acmicpc.net/problem/1546
+//website : https://www.acmicpc.net/problem/1546
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,10 +6,11 @@ using namespace std;
 int main(){
 	double result[3];
 	double sum = 0;
-	double arr[3];	//store input data
 	
 	int n;
 	cin >> n;
+	
+	double arr[n];	//store input data
 	
 	for (int aa = 0; aa < n; aa++){
 		cin>> arr[aa];	//get user input (n number of times)
