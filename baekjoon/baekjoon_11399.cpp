@@ -13,9 +13,19 @@ int main(){
 	int sum = 0;
 	for (int i = 0; i < N; i++){
 		cin >> arr[i];
-		arr[i] = arr[i] + arr[i-1];
-		sum += arr[i];
 	}
+	
+	int nn = sizeof(arr)/sizeof(arr[0]);
+	sort(arr, arr+nn);
+	for(int j = 0; j < N; j++){
+		arr[j] = arr[j] + arr[j-1];
+		sum += arr[j];
+	}
+	
 	cout << sum << endl;
+
 	return 0;
 }
+
+
+
