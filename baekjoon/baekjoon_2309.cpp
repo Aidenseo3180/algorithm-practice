@@ -1,48 +1,47 @@
-//problem : https://www.acmicpc.net/problem/2309
 #include <iostream>
-#include <bits/stdc++.h>
-#include <vector>
-
+#include <algorithm>
 using namespace std;
 
+int arr[9];
+int sum = 0;
+
 int main(){
-	int input;		//input
-	int sum = 0;	//sum of heights. Must be 100
-	
-	vector<int> vec;
-	vector<int> result;	//stores correct vectors
-	for (int i = 0; i<9; i++){
-		cin >> input;
-		vec.push_back(input);
+	ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+ 
+	for (int i = 0; i < 9; i++){
+		cin >> arr[i];
+		sum += arr[i];
 	}
-	sort(vec.begin(), vec.end());
 	
-	//iterators
-	vector<int>::iterator iter;
-	vector<int>::iterator it;
+	sort (arr, arr + 9);
 	
-	for (iter = vec.begin(); iter != (vec.end()); iter++){	//each one of vec element
-		for (it= vec.begin(); it!= (vec.end()-1); it++){  	//exclude the highest number (bc we know that it wouldnt lead to 100)
-			if (*iter != *it){
-				sum = sum + *it;
-				result.push_back(*it);	//add to result vector array
-				if (sum == 100){
-					goto end;	//break
+	for  (int i = 0; i < 8; i++){
+		for (int j = 1; j < 9; j++){
+			//even if i and j are the same, it doesn't matter
+			//if we've found that sum - 2 numbers = 100,
+			if (sum - arr[i] - arr[j] == 100){
+				for (int k = 0; k < 9; k++){
+					if (k != i && k != j){
+						cout << arr[k] << "\n";
+					}
 				}
+				return 0;
 			}
-		}
-		result.clear();	//if sum !=100, then clear the result, and try again
-		sum = 0;	//reset sum every for loop
+		}	
 	}
 	
-	end:
-		vector<int>::iterator it_end;	//print out result vector array
-		for (it_end = result.begin(); it_end != result.end(); it_end++){
-			cout << *it_end << endl;
-		}	
 	
-	return 0;
+
 }
+
+
+
+
+
+
+
 
 
 
