@@ -19,7 +19,8 @@ void bfs(int start){
 	while(!q.empty()){
 		int x = q.front();
 		q.pop();
-	
+		
+		//from 0 to end (basically for all the connected friends)
 		for (int i = 0; i < v[x].size(); i++){
 			
 			int y = v[x][i];
@@ -49,6 +50,7 @@ int main(void){
 		v[input2].push_back(input1);
 	}
 
+	//start from 1, so
 	bfs(1);
 
 	cout << count;
