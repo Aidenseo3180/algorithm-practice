@@ -26,6 +26,7 @@ int solution(int day){
 	int next = time[day];
 	
 	dp[day] = max(solution(day + 1), solution(day + next) + value[day]);
+		
 	return dp[day];
 }
 
@@ -43,19 +44,7 @@ int main() {
 
 	cout << solution(1) << endl;
 	
-	//for some reason, day 2 is 45, not 20  (hmm)
-	
-//	for (int i = 1; i <= N; i++){
-//		cout << dp[i] << " ";
-//	}
 }
-
-
-
-
-
-
-
 
 
 
