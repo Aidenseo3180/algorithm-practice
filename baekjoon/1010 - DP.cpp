@@ -1,5 +1,5 @@
 //https://codejin.tistory.com/m/172
-
+//https://srccode2.tistory.com/17
 #include <iostream>
 
 #define endl "\n"
@@ -31,11 +31,6 @@ int main(){
 	
 	return 0;
 }
-
-
-
-
-
 
 
 
